@@ -1,0 +1,89 @@
+:root{
+    --bg:#010914;--card:#ffffff;--text:#0b2545;--muted:#55697a;
+    --accent:#010914;--accent-2:#00c3ff;--glass: rgba(255,255,255,0.6);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+  body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+  /* Topbar */
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(255,255,255,0.7);backdrop-filter:blur(6px);position:sticky;top:0;z-index:40}
+  .brand{display:flex;align-items:center;gap:12px}
+  .avatar{width:56px;height:56px;border-radius:12px;object-fit:cover;border:3px solid rgba(0,0,0,0.06)}
+  .brand-text h1{margin:0;font-size:16px}
+  .brand-text h1 span{color:var(--accent)}
+  .role{font-size:12px;color:var(--muted);margin:0}
+  /* Nav */
+  .nav{display:flex;gap:12px;align-items:center}
+  .nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .theme-btn{background:transparent;border:none;font-size:18px;cursor:pointer}
+  /* HERO */
+  .hero{display:flex;gap:40px;align-items:center;padding:60px 24px;max-width:1100px;margin:24px auto;animation:fadeInUp .8s ease both}
+  .hero-content{flex:1}
+  .eyebrow{margin:0;color:var(--muted);font-weight:600}
+  .hero-title{font-size:38px;margin:6px 0}
+  .hero-title strong{color:var(--accent-2)}
+  .hero-sub{color:var(--muted);max-width:680px}
+  .hero-cta{margin-top:16px;display:flex;gap:12px}
+  .btn{padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+  .btn.primary{background:var(--accent);color:white}
+  .btn.outline{background:transparent;border:2px solid rgba(0,0,0,0.06);color:var(--text)}
+  .social-row{margin-top:16px;display:flex;gap:10px}
+  .social{display:inline-flex;align-items:center;gap:8px;color:var(--card);text-decoration:none; background:rgba(255,255,255,0.08);padding:8px;border-radius:8px}
+  .social svg{display:block}
+  /* hero image */
+  .hero-image{width:320px;flex:0 0 320px;display:flex;justify-content:center;align-items:center}
+  .rounded-photo{width:320px;height:320px;border-radius:20px;object-fit:cover;border:6px solid rgba(255,255,255,0.12);box-shadow:0 20px 50px rgba(2,6,23,0.2);transform:translateY(0);transition:transform .4s ease}
+  .hero-image:hover .rounded-photo{transform:translateY(-6px) rotate(-1.5deg)}
+  /* containers & cards */
+  .container{max-width:980px;margin:22px auto;padding:0 20px}
+  .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 8px 30px rgba(11,15,30,0.06);}
+  /* grids */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start}
+  .skills-grid ul{margin:0;padding-left:18px}
+  .skills-grid li{margin-bottom:8px;color:var(--muted)}
+  /* footer */
+  .site-footer{padding:28px;text-align:center;color:var(--card);background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:40px}
+  /* small screens */
+  @media (max-width:880px){
+    .hero{flex-direction:column-reverse;align-items:center}
+    .hero-image{width:220px;flex:0 0 220px}
+    .rounded-photo{width:220px;height:220px}
+    .hero-title{font-size:28px;text-align:center}
+  }
+  /* animations */
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  /* DARK THEME */
+  body.dark{
+    --bg:#00070a;--card:#071a2b;--text:#e6eef6;--muted:#9aa7b6;--accent:#3ab3ff;--accent-2:#00eaff;
+  }  
+  .wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #25D366; /* WhatsApp green */
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .whatsapp-row svg {
+    color: #25D366;
+  }
+  .social-row .social:last-child svg {
+    color: #25D366;
+  }
+  .waves-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .waves {
+    animation: waveMove 12s linear infinite;
+  }
+  @keyframes waveMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25px); }
+    100% { transform: translateX(0); }
+  }  
